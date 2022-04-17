@@ -5,7 +5,7 @@ var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 var mongoose = require("mongoose");
 var mongoDB =
-	"mongodb+srv://library:7h3iQV2mdd8Y9Uwf@cluster0.2vfpz.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+	"mongodb+srv://library:<password>@cluster0.2vfpz.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
 
 var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
