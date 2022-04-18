@@ -1,8 +1,15 @@
 const Author = require("../models/author");
 
 //Display list of all authors
-exports.author_list = function (req, res) {
-	res.send("TO BE IMPLEMENTED");
+exports.author_list = function (req, res, next) {
+	Author.find()
+		.sort([["family_name"], ["ascending"]])
+		.exec(function (err, list_author) {
+			if (err) {
+				return next(err);
+			}
+			res.render("author_list", { title: "Authors list", author_list: list_author });
+		});
 };
 
 //Display detail page for specific author
