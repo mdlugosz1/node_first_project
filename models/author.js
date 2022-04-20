@@ -28,13 +28,13 @@ AuthorSchema.virtual("lifespan").get(function () {
 	let lifespan = "";
 
 	if (this.date_of_birth) {
-		lifespan = this.date_of_birth.getYear().toString();
+		lifespan = DateTime.fromJSDate(this.date_of_birth).toLocaleString(DateTime.DATE_SHORT);
 	}
 
 	lifespan += " - ";
 
 	if (this.date_of_death) {
-		lifespan += this.date_of_death.getYear().toString();
+		lifespan += DateTime.fromJSDate(this.date_of_death).toLocaleString(DateTime.DATE_SHORT);
 	}
 
 	return lifespan;
